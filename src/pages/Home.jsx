@@ -1,11 +1,13 @@
-import React from 'react'
+import StarBackground from "../components/StarBackground";
+import ThemeToggle from "../components/ThemeToggle";
 
 const Home = () => {
   return (
-    <div>
-      Home 
+    <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+      <ThemeToggle />
+      <StarBackground />
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
