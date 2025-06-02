@@ -15,7 +15,7 @@ const StarBackground = () => {
     window.addEventListener("resize", handleResize);
 
     return () => {
-      window.removeEventListener("resize");
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
