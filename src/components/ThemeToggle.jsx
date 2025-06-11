@@ -3,12 +3,12 @@ import { useEffect, useState } from "react";
 import { cn } from "../lib/utils";
 
 const ThemeToggle = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
 
   useEffect(() => {
     const theme = localStorage.getItem("theme");
 
-    if (theme === "dark") {
+    if (theme === "dark" || isDarkMode) {
       setIsDarkMode(true);
       document.documentElement.classList.add("dark");
     } else {
@@ -38,9 +38,9 @@ const ThemeToggle = () => {
       )}
     >
       {isDarkMode ? (
-        <Sun className="h-6 w-6 text-yellow-300" />
+        <Sun className="h-6 w-6 text-yellow-300 cursor-pointer" />
       ) : (
-        <Moon className="h-6 w-6 text-blue-900" />
+        <Moon className="h-6 w-6 text-blue-900 cursor-pointer" />
       )}
     </button>
   );
